@@ -22,6 +22,7 @@
   "scripts": {
     "start": "npm run build-watch & npm run start-server",
     "build-watch": "webpack -w",
+    "seed": "node seed.js",
     "test": "react-scripts test",
     "start-server": "nodemon --watch server -e js,html server/index.js",
     "eject": "react-scripts eject"
