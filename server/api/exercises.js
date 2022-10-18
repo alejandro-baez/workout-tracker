@@ -1,8 +1,11 @@
 const router = require("express").Router();
+const { Exercise } = require("../db/index");
 
-router.get("/", (req, res, next) => {
+// /api/exercises
+router.get("/", async (req, res, next) => {
   try {
-    res.send("Currently in exercises")
+    const allExercises = await Exercise.findAll();
+    res.json(allExercises);
   } catch (err) {
     next(err);
   }
